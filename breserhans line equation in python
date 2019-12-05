@@ -1,24 +1,29 @@
 import turtle
 turtle.Turtle()
 
-def dda(x,x1,y,y1):
-    m=(y1-y)/(x1-x)
-    turtle.goto(x,y)
-    turtle.pendown()
-    
-    for i in range(x,x1):
-        if(m<1):
-            y=y+m
-            z=round(y)
-            print("(x,y) ("",i+1,z,"")")
-            turtle.goto(i,z)
-            turtle.pendown()
+def bres(x1,x2,y1,y2):
+    dx=(x2-x1)
+    dy=(y2-y1)
+    m=dy/dx
+    d1=2*dy-dx
+    print("d1=",d1,"x=",x1,"y=",y1)
+    turtle.penup()
+    turtle.goto(x1,y1)
 
+    for i in range(x1,x2):
+        if(d1>0):
+            d1=d1-2*(dy-dx)
+            y1=y1+m
+            print("d1=",d1,"x=",x1,"y=",y1)
+            turtle.goto(i,y1)
+            turtle.pendown()
         else:
-            i=i+1/m
-            d=round(i)
-            print("(x,y) ("",i+1,y1,"")")
-            turtle.goto(i,d)
+            d1=d1+2*dy
+            y1=y1
+            print("d1=",d1,"x=",x1,"y=",y1)
+            turtle.goto(i,y1)
             turtle.pendown()
 
-dda(0,20,300,400)
+bres(10,30,100,300)
+            
+            
