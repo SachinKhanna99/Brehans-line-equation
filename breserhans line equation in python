@@ -17,6 +17,7 @@ def bres(x1,x2,y1,y2):
             print("d1=",d1,"x=",x1,"y=",y1)
             turtle.goto(i,y1)
             turtle.pendown()
+	    turtle.pendown()
         else:
             d1=d1+2*dy
             y1=y1
