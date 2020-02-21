@@ -24,7 +24,8 @@ def bres(x1,x2,y1,y2):
             print("d1=",d1,"x=",x1,"y=",y1)
             turtle.goto(i,y1)
             turtle.pendown()
+	    turtle.pendown()
 
-bres(10,30,100,300)
+bres(30,50,200,300)
             
             
